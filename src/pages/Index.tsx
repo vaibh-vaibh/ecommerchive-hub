@@ -1,6 +1,6 @@
 
 import { Layout } from '@/components/layout/Layout';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/ButtonLoading';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductGrid from '@/components/products/ProductGrid';

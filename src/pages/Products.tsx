@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import ProductGrid from '@/components/products/ProductGrid';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/ButtonLoading';
 import { Product } from '@/components/products/ProductCard';
 import { Filter, Sliders, SlidersHorizontal, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
