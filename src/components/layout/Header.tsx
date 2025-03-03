@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useCart } from '@/context/CartContext';
 import { ShoppingBag, Menu, X, Search } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/ButtonLoading';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +11,6 @@ const Header = () => {
   const { cartCount, openCart } = useCart();
   const location = useLocation();
   
-  // Change header background on scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -41,12 +39,10 @@ const Header = () => {
       )}
     >
       <div className="layout py-4 md:py-6 flex items-center justify-between">
-        {/* Logo */}
         <Link to="/" className="relative z-10">
           <h1 className="text-2xl font-bold">MONOLITH</h1>
         </Link>
         
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
@@ -62,7 +58,6 @@ const Header = () => {
           ))}
         </nav>
         
-        {/* Header Actions */}
         <div className="flex items-center space-x-4">
           <button 
             className="p-2 rounded-full hover:bg-gray-100 transition-colors" 
@@ -84,7 +79,6 @@ const Header = () => {
             )}
           </button>
           
-          {/* Mobile menu button */}
           <button 
             className="p-2 rounded-full hover:bg-gray-100 transition-colors block md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -95,7 +89,6 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Mobile menu */}
       <div 
         className={cn(
           "fixed inset-0 bg-white z-40 transition-transform duration-300 pt-20 px-4 md:hidden",

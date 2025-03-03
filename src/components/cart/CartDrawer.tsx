@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/ButtonLoading';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
