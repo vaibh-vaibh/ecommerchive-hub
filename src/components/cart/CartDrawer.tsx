@@ -5,11 +5,10 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/com
 import { Button } from '@/components/ui/ButtonLoading';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
 import CartItem from './CartItem';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const CartDrawer = () => {
   const { isCartOpen, closeCart, cartItems, cartTotal, clearCart } = useCart();
-  const navigate = useNavigate();
   
   // Close cart drawer when pressing escape key
   useEffect(() => {
@@ -39,11 +38,6 @@ const CartDrawer = () => {
     };
   }, [isCartOpen]);
   
-  const handleContinueShopping = () => {
-    closeCart();
-    navigate('/products');
-  };
-  
   return (
     <Sheet open={isCartOpen} onOpenChange={closeCart}>
       <SheetContent className="w-full sm:max-w-md overflow-y-auto">
@@ -61,7 +55,7 @@ const CartDrawer = () => {
             <p className="text-muted-foreground text-center mb-6">
               Looks like you haven't added anything to your cart yet.
             </p>
-            <Button onClick={handleContinueShopping} className="flex items-center gap-2">
+            <Button onClick={closeCart} className="flex items-center gap-2">
               Continue Shopping <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
@@ -88,7 +82,7 @@ const CartDrawer = () => {
                     Checkout
                   </Link>
                 </Button>
-                <Button variant="outline" className="w-full" onClick={handleContinueShopping}>
+                <Button variant="outline" className="w-full" onClick={closeCart}>
                   Continue Shopping
                 </Button>
                 <button 
